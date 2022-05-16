@@ -34,6 +34,41 @@ $ heroku open -a appname
 ```
 
 ```
+# Production docker-compose file
+# docker-compose -f docker-compose-prod.yml up -d --build
+
+# docker-compose version
+version: '3.8'
+
+services:
+  web:
+    build: .
+    # command: python /code/manage.py runserver 0.0.0.0:8000
+    # Gunicorn : Python Web Server Gateway Interface HTTP server.
+    command: gunicorn config.wsgi -b 0.0.0.0:8000 # new
+    # Docker volumes allow you to persist data from containers and easily share the data between multiple containers.
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    # Express dependency between services
+    depends_on:
+      - db
+    environment:
+      - "DJANGO_SECRET_KEY=o7xku_XuDwD_v0B5TJIxc2qt_3t5Vq4b_BoBsQYX2C7yuC6h0kY"
+
+  db:
+    image: postgres:11
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    # For simplicity, we use POSTGRES_HOST_AUTH_METHOD=trust to allow passwordless access from your local host machine.
+    # In a real production deployment, don’t use this option. Instead, configure proper root credentials using POSTGRES_PASSWORD. For more information, see the PostgreSQL documentation on “trust”.
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+# The Postgres official image, however, comes with a VOLUME predefined in its image description.
+# This means that when you run a PostgreSQL image as a container, it creates a volume for itself and stores data in there.
+volumes:
+  postgres_data:
 
 ```
 
