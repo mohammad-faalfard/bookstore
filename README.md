@@ -34,6 +34,21 @@ $ heroku run python manage.py migrate
 $ heroku run python manage.py createsuperuser
 $ heroku open -a appname
 ```
+# heroku.yml
+```
+setup:
+  addons:
+  - plan: heroku-postgresql
+build:
+  docker:
+    web: Dockerfile
+release:
+  image: web
+  command:
+    - python manage.py collectstatic --noinput
+run:
+  web: gunicorn config.wsgi
+```
 
 ## docker-compose-prod.yml
 ```
