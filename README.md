@@ -3,6 +3,7 @@
 An online Bookstore featuring a custom user model, search, image uploads, permissions and a host of other goodies ready to deploy to heroku.
 
 Dockerized Django project with postgresql
+![hproj1](https://user-images.githubusercontent.com/87778419/168632447-566d2991-dbc1-4d38-9c06-8052eb1d47c7.PNG)
 
 ## 📖 Installation
 To start,Install Python and Docker then clone the repo to your local computer and change into the proper directory.
