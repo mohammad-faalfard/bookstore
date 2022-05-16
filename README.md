@@ -35,7 +35,7 @@ $ heroku run python manage.py createsuperuser
 $ heroku open -a appname
 ```
 
-# $ touch docker-compose-prod.yml
+# docker-compose-prod.yml
 ```
 # Production docker-compose file
 # docker-compose -f docker-compose-prod.yml up -d --build
