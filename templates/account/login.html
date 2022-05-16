@@ -1,0 +1,19 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Log In{% endblock title %}
+
+{% block content %}
+  <h2>Log In</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-success" type="submit">Log In</button>
+  </form>
+{% endblock content %}
+{% comment %} 
+You should always add CSRF protection on any submittable form. 
+Otherwise a malicious website can change the link and attack the site and
+the user. Django has CSRF middleware to handle this for us; all we need to
+do is add {% csrf_token %} tags at the start of the form. 
+{% endcomment %}

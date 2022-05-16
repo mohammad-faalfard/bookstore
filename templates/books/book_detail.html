@@ -1,0 +1,29 @@
+{% extends '_base.html' %}
+
+{% block title %}{{ book.title }}{% endblock title %}
+
+{% block content %}
+  <div class="book-detail">
+    {% if book.cover %}
+      <img class="bookcover" src="{{ book.cover.url}}" alt="{{ book.title }}">
+    {% endif %}
+    <h2><a href="">{{ book.title }}</a></h2>
+    <p>Author: {{ book.author }}</p>
+    <p>Price: {{ book.price }}</p>
+    <div>
+      {% comment %} 
+      With the reviews model set it’s time to update our templates to display
+      reviews on the individual page for each book. Add a basic “Reviews”
+      section and then loop over all existing reviews. Since this is a foreign key
+      relationship we follow it by using book.reviews.all. Then display the
+      review field with review.review and the author with review.author. 
+      {% endcomment %}
+      <h3>Reviews</h3>
+      <ul>
+        {% for review in book.reviews.all %}
+        <li>{{ review.review }} ({{ review.author }})</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock content %}

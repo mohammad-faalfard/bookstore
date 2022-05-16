@@ -1,0 +1,23 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+  <h1>Homepage</h1>
+  <form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}"
+  method="get">
+    <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search"
+    aria-label="Search">
+  </form>
+{% endblock content %}
+{% comment %} 
+A GET bundles form data into a string that is added to the destination URL.
+GET should only be used for requests that do not affect the state of the
+application, such as a search where nothing within the database is changing,
+basically we’re just doing a filtered list view.
+
+A POST bundles up form data, encodes it for transmission, sends it to the
+server, and then receives a response. Any request that changes the state of
+the database–creates, edits, or deletes data–should use a POST.
+{% endcomment %}

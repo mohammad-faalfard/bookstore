@@ -1,0 +1,26 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Sign Up{% endblock title %}
+
+{% block content %}
+  <h2>Sign Up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-success" type="submit">Sign Up</button>
+  </form>
+{% endblock content %}
+
+<!-- 
+Implementing a sign up page for user registration is completely up to us.
+We’ll go through the standard steps for any new page:
+1) create an app-level accounts/urls.py file
+2) update the project-level config/urls.py to point to the accounts app
+3) add a view called SignupPageView
+4) create a signup.html template
+5) update home.html to display the sign up page 
+
+simplified advanced method:
+use django-allauth package to handle user registration
+-->
