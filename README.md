@@ -20,7 +20,6 @@ $ docker-compse exec web python manage.py migrate
 
 
 ```
-$ touch docker-compose-prod.yml
 $ heroku login
 $ touch heroku.yml
 $ heroku create
@@ -32,7 +31,11 @@ $ heroku run python manage.py migrate
 $ heroku run python manage.py createsuperuser
 $ heroku open -a appname
 ```
-
+# run this command and replace DJANGO_SECRET_KEY in docker-compose-prod.yml
+```
+python -c 'import secrets; print(secrets.token_urlsafe(38))'
+```
+# $ touch docker-compose-prod.yml
 ```
 # Production docker-compose file
 # docker-compose -f docker-compose-prod.yml up -d --build
