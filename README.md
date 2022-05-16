@@ -3,7 +3,6 @@
 An online Bookstore featuring a custom user model, search, image uploads, permissions and a host of other goodies ready to deploy to heroku.
 
 Dockerized Django project with postgresql
-![Screenshot (9)](https://user-images.githubusercontent.com/87778419/168634514-0c4deecc-b5d1-448d-9fb9-9ed40079867b.png)
 ![Screenshot](https://user-images.githubusercontent.com/87778419/168634138-33ce206a-d1df-4e0a-8154-078c00f87e90.png)
 ![hsearch](https://user-images.githubusercontent.com/87778419/168634233-0151b79d-dff1-4c4d-8a68-e6866afd3c42.PNG)
 
