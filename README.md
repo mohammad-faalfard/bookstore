@@ -11,12 +11,12 @@ $ git clone https://github.com/cute-bunny917/bookstore.git
 $ cd bookstore
 ```
 
-How to run Project locally:
+# How to run Project locally:
 ```
 $ docker-compse up -d --build
 $ docker-compse exec web python manage.py migrate
 ```
-How to Deploy to Heroku using heroku.yml file and free tier postgresql:
+# How to Deploy to Heroku using heroku.yml file and free tier postgresql:
 
 
 ```
