@@ -16,14 +16,12 @@ $ cd bookstore
 $ docker-compse up -d --build
 $ docker-compse exec web python manage.py migrate
 ```
-* How to Deploy to Heroku using heroku.yml file and docker-compose-prod.yml:
-
 
 replace DJANGO_SECRET_KEY in docker-compose-prod.yml by generating new secret key
 ```
 python -c 'import secrets; print(secrets.token_urlsafe(38))'
 ```
-
+* How to Deploy to Heroku using heroku.yml file and docker-compose-prod.yml:
 ```
 $ heroku login
 $ touch heroku.yml
