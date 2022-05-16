@@ -18,6 +18,9 @@ $ heroku stack:set container -a appname
 $ heroku addons:create heroku-postgresql:hobby-dev -a appname
 $ heroku git:remote -a appname
 $ git push heroku master
+$ heroku run python manage.py migrate
+$ heroku run python manage.py createsuperuser
+$ heroku open -a appname
 ```
 
 [packages]
