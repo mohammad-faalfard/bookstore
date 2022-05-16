@@ -9,7 +9,25 @@ How to run Project locally:
 $ docker-compse up -d --build
 $ docker-compse exec web python manage.py migrate
 ```
-
+How to Deploy to Heroku:
+```
+$ heroku login
+$ touch heroku.yml
+```
+```
+setup:
+  addons:
+  - plan: heroku-postgresql
+build:
+  docker:
+    web: Dockerfile
+release:
+  image: web
+  command:
+    - python manage.py collectstatic --noinput
+run:
+  web: gunicorn config.wsgi
+```
 [packages]
 
 * django: Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design
