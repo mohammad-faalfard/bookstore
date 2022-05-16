@@ -4,6 +4,9 @@ an online Bookstore featuring a custom user model, search, image uploads, permis
 
 Dockerized Django project with postgresql
 
+How to run locally:
+$ docker-compse up -d --build
+
 [packages]
 
 * django 
