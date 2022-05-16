@@ -11,7 +11,7 @@ $ git clone https://github.com/cute-bunny917/bookstore.git
 $ cd bookstore
 ```
 
-### How to run Project locally:
+## How to run Project locally:
 ```
 $ docker-compse up -d --build
 $ docker-compse exec web python manage.py migrate
@@ -21,7 +21,7 @@ replace DJANGO_SECRET_KEY in docker-compose-prod.yml by generating new secret ke
 ```
 python -c 'import secrets; print(secrets.token_urlsafe(38))'
 ```
-* How to Deploy to Heroku using heroku.yml file and docker-compose-prod.yml:
+## How to Deploy to Heroku using heroku.yml file and docker-compose-prod.yml:
 ```
 $ heroku login
 $ touch heroku.yml
