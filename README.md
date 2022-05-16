@@ -1,4 +1,4 @@
-# bookstore - hobby project
+# Bookstore - Hobby Project
 
 an online Bookstore featuring a custom user model, search, image uploads, permissions, and a host of other goodies ready to deploy to heroku.
 
