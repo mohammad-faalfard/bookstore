@@ -16,7 +16,7 @@ $ cd bookstore
 $ docker-compse up -d --build
 $ docker-compse exec web python manage.py migrate
 ```
-# How to Deploy to Heroku using heroku.yml file and free tier postgresql:
+# How to Deploy to Heroku using heroku.yml file and docker-compose-prod.yml:
 
 
 ```
