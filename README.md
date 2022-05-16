@@ -7,7 +7,6 @@ Dockerized Django project with postgresql
 How to run Project locally:
 ```
 $ docker-compse up -d --build
-
 $ docker-compse exec web python manage.py migrate
 ```
 
