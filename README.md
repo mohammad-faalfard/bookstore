@@ -31,7 +31,7 @@ $ heroku run python manage.py migrate
 $ heroku run python manage.py createsuperuser
 $ heroku open -a appname
 ```
-# run this command and replace DJANGO_SECRET_KEY in docker-compose-prod.yml
+* replace DJANGO_SECRET_KEY in docker-compose-prod.yml by generating new secret key
 ```
 python -c 'import secrets; print(secrets.token_urlsafe(38))'
 ```
