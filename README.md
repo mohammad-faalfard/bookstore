@@ -18,6 +18,10 @@ $ docker-compse exec web python manage.py migrate
 ```
 * How to Deploy to Heroku using heroku.yml file and docker-compose-prod.yml:
 
+* replace DJANGO_SECRET_KEY in docker-compose-prod.yml by generating new secret key
+```
+python -c 'import secrets; print(secrets.token_urlsafe(38))'
+```
 
 ```
 $ heroku login
@@ -31,10 +35,7 @@ $ heroku run python manage.py migrate
 $ heroku run python manage.py createsuperuser
 $ heroku open -a appname
 ```
-* replace DJANGO_SECRET_KEY in docker-compose-prod.yml by generating new secret key
-```
-python -c 'import secrets; print(secrets.token_urlsafe(38))'
-```
+
 # $ touch docker-compose-prod.yml
 ```
 # Production docker-compose file
