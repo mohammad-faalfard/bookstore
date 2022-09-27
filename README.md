@@ -15,8 +15,8 @@ $ cd bookstore
 
 ## How to run Project locally:
 ```
-$ docker-compse up -d --build
-$ docker-compse exec web python manage.py migrate
+$ docker-compose up -d --build
+$ docker-compose exec web python manage.py migrate
 ```
 
 replace DJANGO_SECRET_KEY in docker-compose-prod.yml by generating new secret key
